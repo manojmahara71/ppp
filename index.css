@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f7ff;
+  --surface: #ffffff;
+  --text: #101425;
+  --muted: #5f6782;
+  --nav: rgba(245, 247, 255, 0.72);
+  --soft-shadow: 0 20px 45px rgba(25, 35, 68, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg: #070b15;
+  --surface: rgba(14, 19, 35, 0.72);
+  --text: #f3f5ff;
+  --muted: #9ca6cf;
+  --nav: rgba(7, 11, 21, 0.75);
+  --soft-shadow: 0 22px 50px rgba(2, 4, 10, 0.55);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Poppins, Outfit, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.glass {
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  border: 1px solid color-mix(in srgb, white 14%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #8ea0ff, #9f65ff 45%, #5cc8ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.btn-primary,
+.btn-secondary,
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, #667dff, #935bff);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.62rem 1rem;
+  box-shadow: 0 14px 30px rgba(108, 84, 255, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 34px rgba(108, 84, 255, 0.42);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+  padding: 0.58rem 0.95rem;
+}
+
+.btn-secondary:hover,
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.icon-btn {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+  padding: 0.52rem;
+}
+
+.mouse-glow {
+  pointer-events: none;
+  position: fixed;
+  z-index: 10;
+  width: 18rem;
+  height: 18rem;
+  transform: translate(-50%, -50%);
+  filter: blur(24px);
+}
